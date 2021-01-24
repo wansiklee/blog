@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `SIKLOG`,
+    description: `완식이의 흐릿한 잉크 남기기`,
+    author: `wansiklee`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
