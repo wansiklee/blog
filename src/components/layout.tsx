@@ -6,7 +6,6 @@
  */
 
 import React from "react";
-import { useStaticQuery, graphql } from "gatsby";
 import { Global, css } from "@emotion/react";
 import Header from "./Header";
 
@@ -15,21 +14,11 @@ export interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
-
   return (
     <>
       <Global styles={globalStyle} />
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div>{children}</div>
+      <Header />
+      <main>{children}</main>
     </>
   );
 }
@@ -45,6 +34,7 @@ const globalStyle = css`
   body {
     margin: 0;
     padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", 나눔고딕, "Nanum Gothic", "Noto Sans KR", "Noto Sans CJK KR", arial, 돋움, Dotum, Tahoma, Geneva, sans-serif;
   }
 `;
 
