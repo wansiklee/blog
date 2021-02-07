@@ -7,16 +7,14 @@
 
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
-
-import Header from "./header";
 import { Global, css } from "@emotion/react";
+import Header from "./Header";
 
 export interface LayoutProps {
   children: React.ReactNode;
 }
 
-
-const Layout = ({ children }: LayoutProps) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
