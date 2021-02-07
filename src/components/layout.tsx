@@ -8,6 +8,7 @@
 import React from "react";
 import { Global, css } from "@emotion/react";
 import Header from "./Header";
+import Main from "./Main";
 
 export interface LayoutProps {
   children: React.ReactNode;
@@ -18,7 +19,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <Global styles={globalStyle} />
       <Header />
-      <main>{children}</main>
+      <Main>{children}</Main>
     </>
   );
 }
