@@ -1999,6 +1999,7 @@ export type QuerySiteArgs = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
+  flags?: Maybe<SiteFlagsFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
@@ -2138,6 +2139,7 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>;
   port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
+  flags?: Maybe<SiteFlags>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
@@ -2348,6 +2350,7 @@ export type SiteFieldsEnum =
   | 'siteMetadata___author'
   | 'port'
   | 'host'
+  | 'flags___DEV_SSR'
   | 'polyfill'
   | 'pathPrefix'
   | 'id'
@@ -2442,12 +2445,22 @@ export type SiteFilterInput = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
+  flags?: Maybe<SiteFlagsFilterInput>;
   polyfill?: Maybe<BooleanQueryOperatorInput>;
   pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
   internal?: Maybe<InternalFilterInput>;
+};
+
+export type SiteFlags = {
+  __typename?: 'SiteFlags';
+  DEV_SSR?: Maybe<Scalars['Boolean']>;
+};
+
+export type SiteFlagsFilterInput = {
+  DEV_SSR?: Maybe<BooleanQueryOperatorInput>;
 };
 
 export type SiteGroupConnection = {
