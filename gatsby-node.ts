@@ -13,6 +13,8 @@ export const createPages = async ({ actions, graphql }: CreatePagesArgs) => {
             html
             frontmatter {
               title
+              path
+              date(formatString: "YYYY-MM-DD HH:mm:ss")
             }
           }
         }
@@ -24,12 +26,13 @@ export const createPages = async ({ actions, graphql }: CreatePagesArgs) => {
 
   data.allMarkdownRemark.edges.forEach(({ node }: any) => {
     createPage({
-      path: node.frontmatter.title,
+      path: node.frontmatter.path,
       context: {
-          html: node.html,
-          title: node.frontmatter.title,
+        html: node.html,
+        title: node.frontmatter.title,
+        date: node.frontmatter.date,
       },
-      component: path.resolve(__dirname, '../templates/PostTemplate.tsx'),
+      component: path.resolve(__dirname, './src/templates/PostTemplate.tsx'),
     });
   });
 };

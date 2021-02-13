@@ -1,14 +1,25 @@
 import React from 'react';
 import Layout from '../components/Layout';
 
-const PostTemplate: React.FC = React.memo(props => {
+interface IPostProps {
+  pageContext?: {
+    title: string;
+    date: string;
+    html: string;
+  }
+}
+
+const PostTemplate: React.FC<IPostProps> = (props) => {
+  const { pageContext: { title, date, html } } = props;
+
   return (
     <Layout>
-      <code>
-        <pre>{JSON.stringify(props, null, 4)}</pre>
-      </code>
+      <h2>{title}</h2>
+      <h4>{date}</h4>
+      <hr />
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
-});
+};
 
 export default PostTemplate;
