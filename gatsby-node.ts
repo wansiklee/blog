@@ -1,10 +1,11 @@
 import { CreatePagesArgs } from 'gatsby';
+import { Query } from './src/types/graphql-types';
 import path from 'path';
 
 export const createPages = async ({ actions, graphql }: CreatePagesArgs) => {
   const { createPage } = actions;
   
-  const { data, errors }:any = await graphql(`
+  const { data, errors } = await graphql<Query>(`
     {
       allMarkdownRemark {
         edges {
