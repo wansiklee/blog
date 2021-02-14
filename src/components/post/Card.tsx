@@ -1,20 +1,21 @@
 import React from 'react'
 import Link from 'gatsby-link';
 import { css } from "@emotion/react";
+import { MarkdownRemarkFrontmatter } from '../../types/graphql-types';
+import Img from "gatsby-image";
 
 interface ICardProps {
-  path: string;
-  title: string;
-  date: string;
+  data: MarkdownRemarkFrontmatter;
   content: string;
 }
 
 const Card: React.FC<ICardProps> = (props) => {
-  const { path, title, date, content } = props;
+  const { data: { path, title, date, cover }, content } = props;
   
   return (
     <Link to={`/posts${path}`}>
       <article css={cardStyle}>
+        <Img fluid={cover.childImageSharp.fluid} />
         <h2>{title}</h2>
         <time dateTime={date}>{date}</time>
         <p>{content}</p>

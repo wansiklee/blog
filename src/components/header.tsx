@@ -42,7 +42,7 @@ const headerStyle = css`
   justify-content: space-between;
   padding: 0 1rem;
   margin: 0 auto;
-  max-width: 760px;
+  max-width: 1024px;
 `;
 
 const logoStyle = css`

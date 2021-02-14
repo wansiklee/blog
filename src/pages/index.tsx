@@ -17,6 +17,13 @@ const LatestPostListQuery = graphql`
             title
             path
             date(formatString: "YYYY. MM. DD")
+            cover {
+              childImageSharp {
+                fluid(maxWidth: 300, maxHeight: 200) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           id
         }
@@ -33,7 +40,7 @@ const IndexPage: React.FC = () => {
       <SEO title="Home" />
       <CardList>
         {data.allMarkdownRemark.edges.map(({ node }) => (
-          <Card key={node.id} path={node.frontmatter.path} title={node.frontmatter.title} date={node.frontmatter.date} content={node.excerpt}/>
+          <Card key={node.id} data={node.frontmatter} content={node.excerpt} />
         ))}
       </CardList>
     </Layout>

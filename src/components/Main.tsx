@@ -17,7 +17,7 @@ const mainStyle = css`
   padding: 0 1rem;
   padding-top: 2.5rem;
   margin: 0 auto;
-  max-width: 760px;
+  max-width: 1024px;
 `;
 
 export default Main;

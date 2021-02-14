@@ -20,7 +20,7 @@ const cardListStyle = css`
 `;
 
 const gridStyle = css`
-  max-width: 960px;
+  max-width: 1024px;
   width: 100%;
   margin: 0 auto;
   display: grid;
