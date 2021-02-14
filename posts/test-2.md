@@ -2,7 +2,7 @@
 title: 테스트 2
 path: /test-2
 date: 2021-02-13 13:00:00
-cover: gomst-twitter.png
+cover: sikspace.png
 ---
 
 # 테스트 2

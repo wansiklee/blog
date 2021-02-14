@@ -2,7 +2,7 @@
 title: 테스트 3
 path: /test-3
 date: 2021-02-13 21:00:00
-cover: gomst-twitter.png
+cover: sikspace.png
 ---
 
 # 테스트 3
