@@ -1,5 +1,6 @@
 import React from 'react';
 import Layout from '../components/Layout';
+import PostComments from '../components/post/PostComments';
 
 interface IPostProps {
   pageContext?: {
@@ -18,6 +19,7 @@ const PostTemplate: React.FC<IPostProps> = (props) => {
       <h4>{date}</h4>
       <hr />
       <div dangerouslySetInnerHTML={{ __html: html }} />
+      <PostComments />
     </Layout>
   );
 };

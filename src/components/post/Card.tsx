@@ -16,9 +16,9 @@ const Card: React.FC<ICardProps> = (props) => {
     <Link to={`/posts${path}`}>
       <article css={cardStyle}>
         <Img fluid={cover.childImageSharp.fluid} />
-        <h2>{title}</h2>
-        <time dateTime={date}>{date}</time>
-        <p>{content}</p>
+        <h2 css={titleStyle}>{title}</h2>
+        <time dateTime={date} css={dateStyle}>{date}</time>
+        <p css={contentStyle}>{content}</p>
       </article>
     </Link>
   );
@@ -30,8 +30,25 @@ const cardStyle = css`
   transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   &:hover {
     transform: translateY(-0.625rem);
-    // background-color: #F3F4F6;
   }
+`;
+
+const titleStyle = css`
+  font-size: 1.2rem;
+  height: 3.125rem;
+  // white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
+
+const dateStyle = css`
+  font-size: 0.75rem;
+  color: #bbbbbb;
+`;
+
+const contentStyle = css`
+  font-size: 1rem;
+  color: #7d7d7d;
 `;
 
 export default Card;
