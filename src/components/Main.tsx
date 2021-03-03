@@ -13,11 +13,13 @@ const Main: React.FC<MainProps> = ({ children }) => {
 }
 
 const mainStyle = css`
-  height: 100%;
-  padding: 0 1rem;
-  padding-top: 2.5rem;
+  @media screen and (min-width: 640px) {
+    padding: 0 2rem;
+  }
+  width: 100%;
   margin: 0 auto;
   max-width: 1024px;
+  padding: 1rem;
 `;
 
 export default Main;

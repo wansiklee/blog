@@ -16,13 +16,18 @@ export interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <>
+    <div css={layoutStyle}>
       <Global styles={globalStyle} />
       <Header />
       <Main>{children}</Main>
-    </>
+    </div>
   );
 }
+
+const layoutStyle = css`
+  min-height: 100vh;
+  padding-top: 6rem;
+`;
 
 const globalStyle = css`
   html {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import { css } from "@emotion/react";
 import { graphql, Link, useStaticQuery } from "gatsby";
 
@@ -18,7 +18,7 @@ const Header: React.FC<HeaderProps> = () => {
   `);
 
   return (
-    <header css={headerContainerStyle}>
+    <header css={headerContainerStyle} >
       <div css={headerStyle}>
         <Link css={logoStyle} to='/'>{data?.site?.siteMetadata?.title}</Link>
         <ul css={listStyle}>
@@ -32,33 +32,45 @@ const Header: React.FC<HeaderProps> = () => {
 
 const headerContainerStyle = css`
   position: sticky;
-  height: 4rem;
+  width: 100%;
+  height: 5rem;
+  border-bottom: 1px solid #E5E7EB;
+  background-color: #ffffff;
+  transform: translateY(0%);
+  position: fixed;
+  top: 0px;
+  z-index: 100;
 `;
 
 const headerStyle = css`
+  @media screen and (min-width: 640px) {
+    padding: 0 2rem;
+  }
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1024px;
+  padding: 1rem;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 1rem;
-  margin: 0 auto;
-  max-width: 1024px;
 `;
 
 const logoStyle = css`
   text-decoration: none;
   outline: 0;
-  color: #00bbff;
-  font-size: 1.125rem;
+  color: #000000;
+  font-size: 1.8rem;
+  font-weight: 700;
 `;
 
 const linkStyle = css`
   text-decoration: none;
   outline: 0;
-  color: #00bbff;
-  font-size: 1.125rem;
+  color: #5f6c80;
+  font-size: 1.2rem;
   &:hover {
-    color: #0695c9;
+    color: #000000;
     transition: all 0.15s ease-in-out 0s;
   }
 `;
