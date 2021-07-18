@@ -1,8 +1,10 @@
 ---
-title: 테스트 1
-path: /test-1
-date: 2021-02-13 12:00:00
-cover: sikspace.png
+title: 'Test 1'
+excerpt: '시인의 이름과, 별 다하지 비둘기, 노루, 별 내 계십니다.'
+coverImage: '/assets/blog/test-1/sikspace.png'
+date: '2020-03-16T05:35:07.322Z'
+ogImage:
+  url: '/assets/blog/test-1/sikspace.png'
 ---
 
 # 테스트 1

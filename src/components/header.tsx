@@ -1,23 +1,36 @@
-import React, { useCallback, useEffect, useState } from 'react'
-import { css } from '@emotion/react'
+import React from 'react'
+import styled from '@emotion/styled'
+import Link from 'next/link'
 
 export interface HeaderProps {}
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <header css={headerContainerStyle}>
-      <div css={headerStyle}>
-        {/* <Link css={logoStyle} to='/'>{data?.site?.siteMetadata?.title}</Link>
-        <ul css={listStyle}>
-          <li><Link css={linkStyle} to='/'>Posts</Link></li>
-          <li><Link css={linkStyle} to='/'>About</Link></li>
-        </ul> */}
-      </div>
-    </header>
+    <$header>
+      <$box>
+        <$logo>
+          <Link href="/">
+            <a>sik.dev</a>
+          </Link>
+        </$logo>
+        <$navList>
+          <$li>
+            <Link href="/">
+              <a>Posts</a>
+            </Link>
+          </$li>
+          <$li>
+            <Link href="/">
+              <a>About</a>
+            </Link>
+          </$li>
+        </$navList>
+      </$box>
+    </$header>
   )
 }
 
-const headerContainerStyle = css`
+const $header = styled.header`
   position: sticky;
   width: 100%;
   height: 5rem;
@@ -29,7 +42,7 @@ const headerContainerStyle = css`
   z-index: 100;
 `
 
-const headerStyle = css`
+const $box = styled.div`
   @media screen and (min-width: 640px) {
     padding: 0 2rem;
   }
@@ -43,7 +56,7 @@ const headerStyle = css`
   justify-content: space-between;
 `
 
-const logoStyle = css`
+const $logo = styled.div`
   text-decoration: none;
   outline: 0;
   color: #000000;
@@ -51,7 +64,22 @@ const logoStyle = css`
   font-weight: 700;
 `
 
-const linkStyle = css`
+const $navList = styled.ul`
+  display: flex;
+  list-style: none;
+
+  li + li {
+    margin-left: 1.25rem;
+  }
+`
+
+const $li = styled.li`
+  text-decoration: none;
+  outline: 0;
+  color: #000000;
+  font-size: 1.8rem;
+  font-weight: 700;
+
   text-decoration: none;
   outline: 0;
   color: #5f6c80;
@@ -59,15 +87,6 @@ const linkStyle = css`
   &:hover {
     color: #000000;
     transition: all 0.15s ease-in-out 0s;
-  }
-`
-
-const listStyle = css`
-  display: flex;
-  list-style: none;
-
-  li + li {
-    margin-left: 1.25rem;
   }
 `
 

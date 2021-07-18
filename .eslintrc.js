@@ -18,7 +18,8 @@ module.exports = {
     'no-use-before-define': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-use-before-define': 'off',
-    'react/prop-types': 'off'
+    'react/prop-types': 'off',
+    'react/react-in-jsx-scope': 'off'
   },
   settings: {
     react: {

@@ -1,15 +1,15 @@
 import React from 'react'
-import { css } from '@emotion/react'
+import styled from '@emotion/styled'
 
 export interface MainProps {
   children: React.ReactNode
 }
 
 const Main: React.FC<MainProps> = ({ children }) => {
-  return <main css={mainStyle}>{children}</main>
+  return <$main>{children}</$main>
 }
 
-const mainStyle = css`
+const $main = styled.main`
   @media screen and (min-width: 640px) {
     padding: 0 2rem;
   }
