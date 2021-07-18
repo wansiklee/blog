@@ -1,15 +1,12 @@
-import React from "react";
-import { css } from "@emotion/react";
+import React from 'react'
+import { css } from '@emotion/react'
 
 export interface MainProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 
 const Main: React.FC<MainProps> = ({ children }) => {
-
-  return (
-    <main css={mainStyle}>{children}</main>
-  );
+  return <main css={mainStyle}>{children}</main>
 }
 
 const mainStyle = css`
@@ -20,6 +17,6 @@ const mainStyle = css`
   margin: 0 auto;
   max-width: 1024px;
   padding: 1rem;
-`;
+`
 
-export default Main;
+export default Main

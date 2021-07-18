@@ -1,27 +1,24 @@
 import React from 'react'
-import Link from 'gatsby-link';
-import { css } from "@emotion/react";
-import { MarkdownRemarkFrontmatter } from '../../types/graphql-types';
-import Img from "gatsby-image";
+import { css } from '@emotion/react'
 
 interface ICardProps {
-  data: MarkdownRemarkFrontmatter;
-  content: string;
+  content: string
 }
 
 const Card: React.FC<ICardProps> = (props) => {
-  const { data: { path, title, date, cover }, content } = props;
-  
+  const { content } = props
+
   return (
-    <Link to={`/posts${path}`}>
-      <article css={cardStyle}>
-        <Img fluid={cover.childImageSharp.fluid} />
-        <h2 css={titleStyle}>{title}</h2>
-        <time dateTime={date} css={dateStyle}>{date}</time>
-        <p css={contentStyle}>{content}</p>
-      </article>
-    </Link>
-  );
+    <></>
+    // <Link to={`/posts${path}`}>
+    //   <article css={cardStyle}>
+    //     <Img fluid={cover.childImageSharp.fluid} />
+    //     <h2 css={titleStyle}>{title}</h2>
+    //     <p css={contentStyle}>{content}</p>
+    //     <time dateTime={date} css={dateStyle}>{date}</time>
+    //   </article>
+    // </Link>
+  )
 }
 
 const cardStyle = css`
@@ -31,24 +28,24 @@ const cardStyle = css`
   &:hover {
     transform: translateY(-0.625rem);
   }
-`;
+`
 
 const titleStyle = css`
   font-size: 1.2rem;
-  height: 3.125rem;
-  // white-space: nowrap;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-`;
+`
 
 const dateStyle = css`
   font-size: 0.75rem;
   color: #bbbbbb;
-`;
+`
 
 const contentStyle = css`
   font-size: 1rem;
   color: #7d7d7d;
-`;
+  height: 3.75rem;
+`
 
-export default Card;
+export default Card

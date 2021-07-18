@@ -1,17 +1,20 @@
-import React from 'react';
-import Layout from '../components/Layout';
-import PostComments from '../components/post/PostComments';
+import React from 'react'
+
+import Layout from '../components/Layout'
+import PostComments from '../components/post/PostComments'
 
 interface IPostProps {
   pageContext?: {
-    title: string;
-    date: string;
-    html: string;
+    title: string
+    date: string
+    html: string
   }
 }
 
 const PostTemplate: React.FC<IPostProps> = (props) => {
-  const { pageContext: { title, date, html } } = props;
+  const {
+    pageContext: { title, date, html }
+  } = props
 
   return (
     <Layout>
@@ -21,7 +24,7 @@ const PostTemplate: React.FC<IPostProps> = (props) => {
       <div dangerouslySetInnerHTML={{ __html: html }} />
       <PostComments />
     </Layout>
-  );
-};
+  )
+}
 
-export default PostTemplate;
+export default PostTemplate
